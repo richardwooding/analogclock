@@ -403,5 +403,6 @@ gadgets.util.registerOnLoadHandler(init);
 
 </body>
 </html>
+]]>
 </Content>
 </Module>
