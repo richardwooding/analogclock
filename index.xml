@@ -139,7 +139,8 @@ var _clock_face = new (function(ctx, rad){
   }
 
   this.getPngDataUrl = function() {
-     return this.canvas.toDataURL('image/png');
+     return "yes";
+     //return this.canvas.toDataURL('image/png');
   }
     
   this.drawDotes = function(){
