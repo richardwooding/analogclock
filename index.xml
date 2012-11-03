@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs title="Dice">
+                <Require feature="views" />
+                <Require feature="locked-domain" />
+        </ModulePrefs>
+        <Content type="html"><![CDATA[     
+
+<html>
+<style type="text/css">
+<!--
+.button {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  border: 1px solid #bbb;
+}
+
+.button:active {
+        background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#333)); 
+        background: -moz-linear-gradient(bottom, #ddd, #aaa); }
+
+h3 {
+background: #4D90FE;
+color: white;
+padding: 8px;
+margin-bottom:0px;
+}
+.tagline {
+background: grey;
+color: white;
+padding: 8px;
+}
+#primaryUI {
+  margin: 8px;
+}
+#preview {
+   margin-top: 8px;
+   height: 120px;
+   margin-bottom: 8px;
+}
+-->
+</style>
+<body>
+<script src="https://hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.3" ></script>
+<div id="rpsui" style="visibility: hidden">
+<h3>Rock Paper Scissors</h3>
+<div class="tagline"><i>By <a href="https://plus.google.com/111734237778995429762/posts" target="_new">Richard Wooding</a></i></div>
+<div id="primaryUI">
+<input type="button" class="button" onClick="rock()" value="Rock!">
+<input type="button" class="button" onClick="paper()" value="Paper!">
+<input type="button" class="button" onClick="scissors()" value="Scissors!">
+<input type="button" class="button" onClick="random()" value="Random!">
+|<input type="button" class="button" onClick="clearOverlay()" value="Clear">
+</div>
+<div id="preview">
+</div>
+<div id="comingSoon" class="tagline">
+Coming soon
+<ul>
+   <li>Translation into more languages</li>
+</ul>
+</div>
+<div style="display: none">
+Help with additional dice tiles
+<ul>
+  <li>Can be any number of sides</li>
+  <li>Format should be PNG</li>
+  <li>Size should be 119x119 or small variation</li>
+  <li>Colour, transperancy, and alpha-transparency is supported</li>
+  <li>E-mail to <a href="mailto:rollthedice@richardwooding.com">rollthedice@richardwooding.com</a></li>
+</ul>
+</div>
+<div style="margin-left: 8x; margin-right: 8px">
+<p>This extension was dreamed up in:<br/>
+<a href="https://plus.google.com/118252934082486983748/posts" target="_new">The Pirate's Pub</a></p>
+<div>
+</div>
+<script>
+  var ROCK = 0;
+  var PAPER = 1;
+  var SCISSORS = 2;
+  var GFX = ["rock.png", "paper.png", "scissors.png"];
+  var overlay;
+  function move(symbol) {
+     var graphic = GFX[symbol];
+     clearOverlay();
+     var img = gapi.hangout.av.effects.createImageResource("http://rockpaperscissors.richardwooding.com/gfx/white/" + GFX[symbol]);
+     overlay = img.createOverlay({'position': {'x':0, 'y':0}, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
+     overlay.setVisible(true);
+  }
+  function clearOverlay() {
+    console.log("Clearing");
+     if (overlay) {
+        console.log("Removing overlay");
+        overlay.setVisible(false);
+        overlay.dispose();
+        overlay = false;
+     }
+     console.log("Done");
+  }
+  function rock() {
+     move(ROCK);
+  }
+  function paper() {
+    move(PAPER);
+  }
+  function scissors() {
+    move(SCISSORS);
+  }
+  function random() {
+    move(Math.floor(Math.random()*3));
+  }
+function init() {
+
+  // When API is ready...
+  gapi.hangout.onApiReady.add(
+      function(eventObj) {
+        if (eventObj.isApiReady) {
+          document.getElementById('rpsui')
+            .style.visibility = 'visible';
+        }
+      });
+}
+
+// Wait for gadget to load.
+gadgets.util.registerOnLoadHandler(init);
+</script>
+</body>
+</html>
+]]>
+</Content>
+</Module>
