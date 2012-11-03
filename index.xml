@@ -358,6 +358,8 @@ var _clock = function(){
   _minute_needle.draw();
   _hour_needle.draw();
   
+  console.log(cx.toDataURL('image/png');)
+
   // Execute the function every 1 sec. (In FPS, 1fps. That is, 1000ms/1fps)
   setTimeout(_clock,1000/1);
 }
