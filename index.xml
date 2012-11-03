@@ -137,10 +137,6 @@ var _clock_face = new (function(ctx, rad){
     this.drawDotes();
     this.drawHourDotes();
   }
-
-  this.getPngDataUrl = function() {
-     return this.canvas.toDataUrl();
-  }
     
   this.drawDotes = function(){
     /* 
@@ -362,7 +358,7 @@ var _clock = function(){
   _minute_needle.draw();
   _hour_needle.draw();
   
-  console.log(_clock_face.getPngDataUrl());
+  console.log(cv.getDataURL());
 
   // Execute the function every 1 sec. (In FPS, 1fps. That is, 1000ms/1fps)
   setTimeout(_clock,1000/1);
