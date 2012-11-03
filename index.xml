@@ -128,7 +128,7 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.clearRect(0,0,this.center*2,this.center*2);
     
     this.canvas.lineWidth = 4.0;
-    this.canvas.strokeStyle = "#567";
+    this.canvas.strokeStyle = "#fff";
     this.canvas.beginPath();
     this.canvas.arc(this.center,this.center,this.radius,0,Math.PI * 2,true);
     this.canvas.closePath();
@@ -146,8 +146,8 @@ var _clock_face = new (function(ctx, rad){
     var theta = 0;
     var distance = this.radius * 0.9; // 90% from the center
     
-    this.canvas.lineWidth = 0.5;
-    this.canvas.strokeStyle = "#137";
+    this.canvas.lineWidth = 1;
+    this.canvas.strokeStyle = "#fff";
     
     for(var i=0; i<60; i++){
       // calculate Theta
@@ -172,7 +172,7 @@ var _clock_face = new (function(ctx, rad){
     var distance = this.radius * 0.9; // 90% from the center
     
     this.canvas.lineWidth = 5.0;
-    this.canvas.strokeStyle = "#137";
+    this.canvas.strokeStyle = "#fff";
     
     for(var i=0; i<12; i++){
       // calculate Theta
@@ -205,8 +205,8 @@ var _second_needle = new (function(ctx,rad,sec){ // Accepts "sec" value
      x = this.center + this.size * Math.cos(this.sec * theta - Math.PI/2);
      y = this.center + this.size * Math.sin(this.sec * theta - Math.PI/2);
     
-     this.canvas.lineWidth = 2.0;
-     this.canvas.strokeStyle = "#423";
+     this.canvas.lineWidth = 5.0;
+     this.canvas.strokeStyle = "#fff";
     this.canvas.lineCap = "round";
     
      this.canvas.beginPath();
@@ -244,8 +244,8 @@ var _minute_needle = new (function(ctx,rad,min,sec){
      x = this.center + this.size * Math.cos(((this.min + this.sec/60) * theta) - Math.PI/2);
      y = this.center + this.size * Math.sin(((this.min + this.sec/60) * theta) - Math.PI/2);
     
-     this.canvas.lineWidth = 3.0;
-     this.canvas.strokeStyle = "#423";
+     this.canvas.lineWidth = 6.0;
+     this.canvas.strokeStyle = "#fff";
      this.canvas.lineCap = "round";
     
      this.canvas.beginPath();
@@ -291,8 +291,8 @@ var _hour_needle = new (function(ctx,rad,hour,min,sec){
      x = this.center + this.size * Math.cos(((this.hour + this.min/60 + this.sec/3600) * theta) - Math.PI/2);
      y = this.center + this.size * Math.sin(((this.hour + this.min/60 + this.sec/3600) * theta) - Math.PI/2);
     
-     this.canvas.lineWidth = 5.0;
-     this.canvas.strokeStyle = "#423";
+     this.canvas.lineWidth = 7.0;
+     this.canvas.strokeStyle = "#fff";
      this.canvas.lineCap = "round";
     
      this.canvas.beginPath();
