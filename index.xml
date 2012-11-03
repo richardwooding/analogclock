@@ -383,7 +383,7 @@ function init() {
           document.getElementById('clockui')
             .style.visibility = 'visible';
           _init();
-          _clock();ß  
+          _clock();
         }
       });
 }
