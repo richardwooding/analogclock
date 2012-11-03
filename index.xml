@@ -347,6 +347,17 @@ var _init = function(){
   _hour_needle.update(_dateObject.hours,_dateObject.minutes,_dateObject.seconds);
 }
     
+var overlay;
+
+function clearOverlay() {
+     if (overlay) {
+        console.log("Removing overlay");
+        overlay.setVisible(false);
+        overlay.dispose();
+        overlay = false;
+     }
+  }
+
 // The core function, which co-ordinates all the functions together.                       
 var _clock = function(){
   
@@ -358,11 +369,17 @@ var _clock = function(){
   _minute_needle.draw();
   _hour_needle.draw();
   
-  console.log(cv.toDataURL());
+  clearOverlay();
+  var img = gapi.hangout.av.effects.createImageResource(cv.toDataURL());
+  overlay = img.createOverlay({'position': {'x':0, 'y':0}, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
+  overlay.setVisible(true);
+
 
   // Execute the function every 1 sec. (In FPS, 1fps. That is, 1000ms/1fps)
   setTimeout(_clock,1000/1);
 }
+
+
     
 // You can avoid this line to start the clock as a stop-watch!
 //_init();
