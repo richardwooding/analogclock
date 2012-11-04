@@ -62,36 +62,36 @@
           <h5>Positions</h5>
           <table width="75%" align="center">
             <tr>
-              <td>
-                <input type="radio" name="position" onclick="currentPos=positions[0];" checked="true" align="center">
+              <td align="center">
+                <input type="radio" name="position" onclick="currentPos=positions[0];" checked="true">
               </td>
-              <td>
+              <td align="center">
                 &nbsp;
               </td>
-              <td>
-                <input type="radio" name="position" onclick="currentPos=positions[1];" align="center">
+              <td align="center">
+                <input type="radio" name="position" onclick="currentPos=positions[1];">
               </td>             
             </tr>
             <tr>
-              <td>
+              <td align="center">
                 &nbsp;
               </td>
-              <td>
-                <input type="radio" name="position" onclick="currentPos=positions[2];" align="center">
+              <td align="center">
+                <input type="radio" name="position" onclick="currentPos=positions[2];">
               </td>
-              <td>
+              <td align="center">
                 &nbsp;
               </td>              
             </tr>
             <tr>
-              <td>
-                 <input type="radio" name="position" onclick="currentPos=positions[3];" align="center">
+              <td align="center">
+                 <input type="radio" name="position" onclick="currentPos=positions[3];">
               </td>
-              <td>
+              <td align="center">
                 &nbsp;
               </td>
-              <td>
-                 <input type="radio" name="position" onclick="currentPos=positions[4];" align="center">
+              <td align="center">
+                 <input type="radio" name="position" onclick="currentPos=positions[4];">
               </td>              
             </tr>
           </table>
