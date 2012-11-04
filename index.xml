@@ -1106,6 +1106,7 @@ var _clock_face = new (function(ctx, rad){
   this.radius = rad/2 - 5;
   this.center = rad/2;
   this.canvas = ctx;
+  this.textY = rad/4;
     
   this.draw = function(){
     this.canvas.clearRect(0,0,this.center*2,this.center*2);
@@ -1126,9 +1127,7 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.textBaseline = 'top';
     this.canvas.fillStyle = fgCol;
     var tWidth = this.canvas.measureText(gmt);
-    this.canvas.fillText(gmt, Math.round(this.center-tWidth/2),Math.round(this.center-this.center/2)); 
-    
-    console.log(gmt);
+    this.canvas.fillText(gmt, this.center-(tWidth/2),textY); 
 
     this.drawDotes();
     this.drawHourDotes();
