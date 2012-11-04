@@ -1099,10 +1099,11 @@ var _clock_face = new (function(ctx, rad){
     
     this.canvas.lineWidth = 4.0;
     this.canvas.strokeStyle = fgCol;
-    this.canvas.fillStyle = bgCol;
     this.canvas.beginPath();
     this.canvas.arc(this.center,this.center,this.radius,0,Math.PI * 2,true);
     this.canvas.closePath();
+    this.canvas.fillStyle = bgCol;
+    context.fill();
     this.canvas.stroke();
     
     this.drawDotes();
