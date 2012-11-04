@@ -42,12 +42,15 @@
     #oops a{
       color: #a52;
     }
+    h5 {
+       text-align: center;
+    }
   </style>
   <script src="https://hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.3" ></script>
 </head>
     <body>
       <div id="clockui" style="visibility: hidden;">
-      <div style="background-color: black;">
+      <div style="background-color: black; text-align: center">
        <canvas id="ca" width="300" height="300">
            <div id="oops"><p>Your browser does not support HTML5 Canvas. This is bad, eh? You can get an HTML5 enabled browser from these links: 
             <a href="http://www.google.com/chrome"><strong>Google Chrome</strong></a>, <a href="http://www.mozilla.org/en-US/firefox/new/"><strong>Mozilla Firefox</strong></a>, <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home"><strong>Internet Explorer 9</strong></a>. It's always better to keep yourself updated!
@@ -57,10 +60,10 @@
       </div>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
-          <table width="100%">
+          <table width="100%" align="center">
             <tr>
               <td>
-                <input type="radio" name="position" onclick="currentPos=positions[0];" selected="true">
+                <input type="radio" name="position" onclick="currentPos=positions[0];" checked="true">
               </td>
               <td>
                 &nbsp;
