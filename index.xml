@@ -53,21 +53,57 @@
             </p>
           </div>
       </canvas>
+      <form name="positionForm" id="positions">
+          <h5>Positions</h5>
+          <table width="100%">
+            <tr>
+              <td>
+                <input type="radio" name="position" onclick="currentPos=positions[0];" selected>
+              </td>
+              <td>
+                &nbsp;
+              </td>
+              <td>
+                <input type="radio" name="position" onclick="currentPos=positions[1];" >
+              </td>             
+            </tr>
+            <tr>
+              <td>
+                &nbsp;
+              </td>
+              <td>
+                <input type="radio" name="position" onclick="currentPos=positions[2];">
+              </td>
+              <td>
+                &nbsp;
+              </td>              
+            </tr>
+            <tr>
+              <td>
+                 <input type="radio" name="position" onclick="currentPos=positions[3];">
+              </td>
+              <td>
+                &nbsp;
+              </td>
+              <td>
+                 <input type="radio" name="position" onclick="currentPos=positions[4];">
+              </td>              
+            </tr>
+          </table>
+      </form>
     </div>
       
     <script>
-/*
-Analog Clock in HTML5 Canvas + Javascript
 
-Author: Vishnu Haridas
-Contact: hvishnu999@gmail.com
-Follow: twitter.com/hvishnu999
+var positions = [
+  {'x':-0.35, 'y':-0.2},
+  {'x':0.35, 'y':-0.2},
+  {'x': 0, 'y': 0},
+  {'x':-0.35, 'y':0.2},
+  {'x':-0.35, 'y':0.2}
+];
 
-Dated: 07-01-2012
-
-The descriptive tutorial will appear soon on my blog - www.iamvishnu.com, on
-how to draw the clock, and more on HTML5 canvas. This is a sneak preview only.
-*/
+var currentPos = positions[0];
 
 // Set the radius of the clock dial
 var rad = 250;
@@ -371,7 +407,7 @@ var _clock = function(){
   
   clearOverlay();
   var img = gapi.hangout.av.effects.createImageResource(cv.toDataURL());
-  overlay = img.createOverlay({'position': {'x':0.35, 'y':-0.2}, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
+  overlay = img.createOverlay({'position': currentPos, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
   overlay.setVisible(true);
 
 
