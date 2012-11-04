@@ -1123,8 +1123,9 @@ var _clock_face = new (function(ctx, rad){
     var gmt = "GMT" + offset;
 
     
-    this.canvas.font = "normal 30px sans-serif";
+    this.canvas.font = "normal 20px sans-serif";
     this.canvas.textBaseline = 'middle';
+    this.canvas.textAlign="center";
     this.canvas.fillStyle = fgCol;
     this.canvas.fillText(gmt, this.center,this.textY); 
 
