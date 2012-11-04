@@ -1103,7 +1103,7 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.arc(this.center,this.center,this.radius,0,Math.PI * 2,true);
     this.canvas.closePath();
     this.canvas.fillStyle = bgCol;
-    context.fill();
+    this.canvas.fill();
     this.canvas.stroke();
     
     this.drawDotes();
