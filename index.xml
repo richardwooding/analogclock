@@ -50,7 +50,7 @@
 </head>
     <body>
       <div id="clockui" style="visibility: hidden;">
-      <div style="background-color: black; text-align: center">
+      <div style="text-align: center">
        <canvas id="ca" width="300" height="300">
            <div id="oops"><p>Your browser does not support HTML5 Canvas. This is bad, eh? You can get an HTML5 enabled browser from these links: 
             <a href="http://www.google.com/chrome"><strong>Google Chrome</strong></a>, <a href="http://www.mozilla.org/en-US/firefox/new/"><strong>Mozilla Firefox</strong></a>, <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home"><strong>Internet Explorer 9</strong></a>. It's always better to keep yourself updated!
