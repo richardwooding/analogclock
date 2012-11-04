@@ -433,26 +433,26 @@ var _clock = function(){
 // Make the first call, and rest will be handled by the clock itself..!!!
 //_clock();
   
-// The detailed tutorial will come soon on www.iamvishnu.com
-// Thanks for watching! 
-// Contact at : hvishnu999@gmail.com
 
 function init() {
 
   // When API is ready...
   gapi.hangout.onApiReady.add(
       function(eventObj) {
-        var foregroundPicker = new jscolor.color(document.getElementById('foregroundColor'), {})
-        foregroundPicker.fromString('FFFFFF');
 
-        var backgroundPicker = new jscolor.color(document.getElementById('backgroundColor'), {})
-        backgroundPicker.fromString('000000');
        
 
 
         if (eventObj.isApiReady) {
           document.getElementById('clockui')
             .style.visibility = 'visible';
+
+            var foregroundPicker = new jscolor.color(document.getElementById('foregroundColor'), {})
+            foregroundPicker.fromString('FFFFFF');
+
+            var backgroundPicker = new jscolor.color(document.getElementById('backgroundColor'), {})
+            backgroundPicker.fromString('000000');
+
           _init();
           _clock();
         }
