@@ -60,9 +60,9 @@
       </canvas>
       </div>
       Background:
-      <input class="color" value="000000"><br>
+      <input id="backgroundColor"><br>
       Foreground
-      <input class="color" value="ffffff"><br>
+      <input id="foregroundColor"><br>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
           <table width="75%" align="center">
@@ -442,6 +442,14 @@ function init() {
   // When API is ready...
   gapi.hangout.onApiReady.add(
       function(eventObj) {
+        var foregroundPicker = new jscolor.color(document.getElementById('foregroundColor'), {})
+        foregroundPicker.fromString('FFFFFF');
+
+        var backgroundPicker = new jscolor.color(document.getElementById('backgroundColor'), {})
+        backgroundPicker.fromString('000000');
+       
+
+
         if (eventObj.isApiReady) {
           document.getElementById('clockui')
             .style.visibility = 'visible';
