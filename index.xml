@@ -1125,7 +1125,11 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.textBaseline = 'middle';
     this.canvas.textAlign="center";
     this.canvas.fillStyle = fgCol;
-    this.canvas.fillText(new Date().toTimeString(), this.center,this.textZY); 
+
+    var date = new Date();
+
+    this.canvas.fillText(date.getHours() + ":" + date.getMinutes(), this.center,this.textZY);
+    this.canvas.fillText(offset, this.center,this.textTY); 
 
     this.drawDotes();
     this.drawHourDotes();
