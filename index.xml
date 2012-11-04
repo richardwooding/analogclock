@@ -1026,8 +1026,6 @@ var jscolor = {
 
 var fgCol = "#fff";
 
-document.
-
 var positions = [
   {'x':-0.35, 'y':-0.2},
   {'x':0.35, 'y':-0.2},
