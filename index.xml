@@ -1048,7 +1048,9 @@ function pad(number, length){
 var offset = new Date().getTimezoneOffset()
 offset = ((offset<0? '+':'-')+ // Note the reversed sign!
           pad(parseInt(Math.abs(offset/60)), 2)+
-          pad(Math.abs(offset%60), 2))
+          pad(Math.abs(offset%60), 2));
+
+offset = "GMT"+offset;
 
 var currentPos = positions[0];
 
