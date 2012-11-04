@@ -59,7 +59,7 @@
       </canvas>
       </div>
       <input id="backgroundColor"> Background<br>
-      <input id="foregroundColor"> Foreground<br>
+      <input id="foregroundColor" onchange="fgCol=this.color"> Foreground<br>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
           <table width="75%" align="center">
@@ -1024,6 +1024,10 @@ var jscolor = {
 
 };      
 
+var fgCol = "#fff";
+
+document.
+
 var positions = [
   {'x':-0.35, 'y':-0.2},
   {'x':0.35, 'y':-0.2},
@@ -1093,7 +1097,7 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.clearRect(0,0,this.center*2,this.center*2);
     
     this.canvas.lineWidth = 4.0;
-    this.canvas.strokeStyle = "#fff";
+    this.canvas.strokeStyle = fgCol;
     this.canvas.beginPath();
     this.canvas.arc(this.center,this.center,this.radius,0,Math.PI * 2,true);
     this.canvas.closePath();
@@ -1112,7 +1116,7 @@ var _clock_face = new (function(ctx, rad){
     var distance = this.radius * 0.9; // 90% from the center
     
     this.canvas.lineWidth = 1;
-    this.canvas.strokeStyle = "#fff";
+    this.canvas.strokeStyle = fgCol;
     
     for(var i=0; i<60; i++){
       // calculate Theta
@@ -1137,7 +1141,7 @@ var _clock_face = new (function(ctx, rad){
     var distance = this.radius * 0.9; // 90% from the center
     
     this.canvas.lineWidth = 5.0;
-    this.canvas.strokeStyle = "#fff";
+    this.canvas.strokeStyle = fgCol;
     
     for(var i=0; i<12; i++){
       // calculate Theta
@@ -1171,7 +1175,7 @@ var _second_needle = new (function(ctx,rad,sec){ // Accepts "sec" value
      y = this.center + this.size * Math.sin(this.sec * theta - Math.PI/2);
     
      this.canvas.lineWidth = 5.0;
-     this.canvas.strokeStyle = "#fff";
+     this.canvas.strokeStyle = fgCol;
     this.canvas.lineCap = "round";
     
      this.canvas.beginPath();
@@ -1210,7 +1214,7 @@ var _minute_needle = new (function(ctx,rad,min,sec){
      y = this.center + this.size * Math.sin(((this.min + this.sec/60) * theta) - Math.PI/2);
     
      this.canvas.lineWidth = 6.0;
-     this.canvas.strokeStyle = "#fff";
+     this.canvas.strokeStyle = fgCol;
      this.canvas.lineCap = "round";
     
      this.canvas.beginPath();
@@ -1257,7 +1261,7 @@ var _hour_needle = new (function(ctx,rad,hour,min,sec){
      y = this.center + this.size * Math.sin(((this.hour + this.min/60 + this.sec/3600) * theta) - Math.PI/2);
     
      this.canvas.lineWidth = 7.0;
-     this.canvas.strokeStyle = "#fff";
+     this.canvas.strokeStyle = fgCol;
      this.canvas.lineCap = "round";
     
      this.canvas.beginPath();
