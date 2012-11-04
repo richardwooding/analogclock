@@ -58,8 +58,8 @@
           </div>
       </canvas>
       </div>
-      <input id="backgroundColor" class="color"> Background<br>
-      <input id="foregroundColor" class="color" onchange="fgCol='#' + this.color"> Foreground<br>
+      <input id="backgroundColor" class="color" onchange="bgCol='#' + this.color" value="000000"> Background<br>
+      <input id="foregroundColor" class="color" onchange="fgCol='#' + this.color" value="ffffff"> Foreground<br>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
           <table width="75%" align="center">
@@ -1027,6 +1027,7 @@ var jscolor = {
 jscolor.install();
 
 var fgCol = "#fff";
+var bgCol = "#000";
 
 var positions = [
   {'x':-0.35, 'y':-0.2},
@@ -1098,6 +1099,7 @@ var _clock_face = new (function(ctx, rad){
     
     this.canvas.lineWidth = 4.0;
     this.canvas.strokeStyle = fgCol;
+    this.canvas.fillStyle = bgCol;
     this.canvas.beginPath();
     this.canvas.arc(this.center,this.center,this.radius,0,Math.PI * 2,true);
     this.canvas.closePath();
