@@ -60,7 +60,7 @@
       </div>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
-          <table width="100%" align="center">
+          <table width="75%" align="center">
             <tr>
               <td>
                 <input type="radio" name="position" onclick="currentPos=positions[0];" checked="true">
