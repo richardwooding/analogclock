@@ -58,6 +58,7 @@
           </div>
       </canvas>
       </div>
+      <input type="checkbox" checked="true" onchange="displayClock=this.checked"> Display in hangout<br>
       <input id="backgroundColor" class="color" onchange="bgCol='#' + this.color" value="000000"> Background<br>
       <input id="foregroundColor" class="color" onchange="fgCol='#' + this.color" value="ffffff"> Foreground<br>
       <form name="positionForm" id="positions">
@@ -68,32 +69,32 @@
                 <input type="radio" name="position" onclick="currentPos=positions[0];" checked="true">
               </td>
               <td align="center">
-                &nbsp;
+                <input type="radio" name="position" onclick="currentPos=positions[1];">
               </td>
               <td align="center">
-                <input type="radio" name="position" onclick="currentPos=positions[1];">
+                <input type="radio" name="position" onclick="currentPos=positions[2];">
               </td>             
             </tr>
             <tr>
               <td align="center">
-                &nbsp;
+                <input type="radio" name="position" onclick="currentPos=positions[3];">
               </td>
               <td align="center">
-                <input type="radio" name="position" onclick="currentPos=positions[2];">
+                <input type="radio" name="position" onclick="currentPos=positions[4];">
               </td>
               <td align="center">
-                &nbsp;
+                <input type="radio" name="position" onclick="currentPos=positions[5];">
               </td>              
             </tr>
             <tr>
               <td align="center">
-                 <input type="radio" name="position" onclick="currentPos=positions[3];">
+                 <input type="radio" name="position" onclick="currentPos=positions[6];">
               </td>
               <td align="center">
-                &nbsp;
+                <input type="radio" name="position" onclick="currentPos=positions[7];">
               </td>
               <td align="center">
-                 <input type="radio" name="position" onclick="currentPos=positions[4];">
+                 <input type="radio" name="position" onclick="currentPos=positions[8];">
               </td>              
             </tr>
           </table>
@@ -1028,12 +1029,17 @@ jscolor.install();
 
 var fgCol = "#fff";
 var bgCol = "#000";
+var displayClock=true;
 
 var positions = [
   {'x':-0.35, 'y':-0.2},
+  {'x':0, 'y':-0.2},
   {'x':0.35, 'y':-0.2},
-  {'x': 0, 'y': 0},
+  {'x':-0.35, 'y': 0},
+  {'x':0, 'y': 0},
+  {'x':0.35, 'y':0},
   {'x':-0.35, 'y':0.2},
+  {'x':0, 'y':0.2},
   {'x':0.35, 'y':0.2}
 ];
 
@@ -1369,9 +1375,11 @@ var _clock = function(){
   _hour_needle.draw();
   
   clearOverlay();
-  var img = gapi.hangout.av.effects.createImageResource(cv.toDataURL());
-  overlay = img.createOverlay({'position': currentPos, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
-  overlay.setVisible(true);
+  if (displayClock) {
+    var img = gapi.hangout.av.effects.createImageResource(cv.toDataURL());
+    overlay = img.createOverlay({'position': currentPos, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
+    overlay.setVisible(true);
+  }
 
 
   // Execute the function every 1 sec. (In FPS, 1fps. That is, 1000ms/1fps)
