@@ -1037,6 +1037,19 @@ var positions = [
   {'x':0.35, 'y':0.2}
 ];
 
+function pad(number, length){
+    var str = "" + number
+    while (str.length < length) {
+        str = '0'+str
+    }
+    return str
+}
+
+var offset = new Date().getTimezoneOffset()
+offset = ((offset<0? '+':'-')+ // Note the reversed sign!
+          pad(parseInt(Math.abs(offset/60)), 2)+
+          pad(Math.abs(offset%60), 2))
+
 var currentPos = positions[0];
 
 // Set the radius of the clock dial
@@ -1105,6 +1118,11 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.fillStyle = bgCol;
     this.canvas.fill();
     this.canvas.stroke();
+
+    var gmt = "GMT" + offset;
+
+    var tWidth = this.canvas.measureText(gmt);
+    this.canvas.fillText(gmt, this.center-tWidth/2,this.center-20); 
     
     this.drawDotes();
     this.drawHourDotes();
