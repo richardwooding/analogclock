@@ -1122,11 +1122,11 @@ var _clock_face = new (function(ctx, rad){
     var gmt = "GMT" + offset;
 
     
-    this.canvas.font = 'italic 30px sans-serif';
+    this.canvas.font = '30px sans-serif';
     this.canvas.textBaseline = 'top';
     this.canvas.fillStyle = fgCol;
     var tWidth = this.canvas.measureText(gmt);
-    this.canvas.fillText(gmt, this.center-tWidth/2,this.center-this.center/2); 
+    this.canvas.fillText(gmt, Math.round(this.center-tWidth/2),Math.round(this.center-this.center/2); 
     
     this.drawDotes();
     this.drawHourDotes();
