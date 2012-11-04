@@ -1128,6 +1128,8 @@ var _clock_face = new (function(ctx, rad){
     var tWidth = this.canvas.measureText(gmt);
     this.canvas.fillText(gmt, Math.round(this.center-tWidth/2),Math.round(this.center-this.center/2)); 
     
+    console.log(gmt);
+
     this.drawDotes();
     this.drawHourDotes();
   }
