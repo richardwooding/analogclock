@@ -62,7 +62,7 @@
       Background:
       <input class="color" value="000000"><br>
       Foreground
-      <input class="color" value="ffffff"<br>
+      <input class="color" value="ffffff"><br>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
           <table width="75%" align="center">
