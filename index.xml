@@ -58,8 +58,8 @@
           </div>
       </canvas>
       </div>
-      <input id="backgroundColor"> Background<br>
-      <input id="foregroundColor" onchange="fgCol=this.color"> Foreground<br>
+      <input id="backgroundColor" class="color"> Background<br>
+      <input id="foregroundColor" class="color" onchange="fgCol='#' + this.color"> Foreground<br>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
           <table width="75%" align="center">
@@ -1367,12 +1367,6 @@ function init() {
         if (eventObj.isApiReady) {
           document.getElementById('clockui')
             .style.visibility = 'visible';
-
-            var foregroundPicker = new jscolor.color(document.getElementById('foregroundColor'), {})
-            foregroundPicker.fromString('FFFFFF');
-
-            var backgroundPicker = new jscolor.color(document.getElementById('backgroundColor'), {})
-            backgroundPicker.fromString('000000');
 
           _init();
           _clock();
