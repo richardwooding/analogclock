@@ -58,10 +58,8 @@
           </div>
       </canvas>
       </div>
-      Background:
-      <input id="backgroundColor"><br>
-      Foreground
-      <input id="foregroundColor"><br>
+      <input id="backgroundColor"> Background<br>
+      <input id="foregroundColor"> Foreground<br>
       <form name="positionForm" id="positions">
           <h5>Positions</h5>
           <table width="75%" align="center">
