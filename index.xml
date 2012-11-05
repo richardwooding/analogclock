@@ -1360,14 +1360,14 @@ var _init = function(){
   _hour_needle.update(_dateObject.hours,_dateObject.minutes,_dateObject.seconds);
 }
     
-var overlay;
+var overlays = new Array();
 
 function clearOverlay() {
-     if (overlay) {
-        console.log("Removing overlay");
+     while (overlays.length > 1) {
+        var overlay = overlays[0];
         overlay.setVisible(false);
         overlay.dispose();
-        overlay = false;
+        overlays.shift();
      }
   }
 
@@ -1382,11 +1382,13 @@ var _clock = function(){
   _minute_needle.draw();
   _hour_needle.draw();
   
-  clearOverlay();
+  
   if (displayClock) {
     var img = gapi.hangout.av.effects.createImageResource(cv.toDataURL());
-    overlay = img.createOverlay({'position': currentPos, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
+    var overlay = img.createOverlay({'position': currentPos, 'scale' : {'magnitude': 0.5, 'reference' : gapi.hangout.av.effects.ScaleReference.HEIGHT}});
     overlay.setVisible(true);
+    overlays.push(overlay);
+    clearOverlay();
   }
 
 
