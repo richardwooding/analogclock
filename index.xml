@@ -1144,7 +1144,7 @@ var _clock_face = new (function(ctx, rad){
 
     var date = new Date();
 
-    this.canvas.fillText(pad(date.getHours(),2) + ":" + pad(date.getMinutes(), 2), this.center,this.textZY);
+    this.canvas.fillText(pad(_dateObject.hours,2) + ":" + pad(_dateObject.minutes, 2), this.center,this.textZY);
     this.canvas.fillText(offset, this.center,this.textTY); 
 
     this.drawDotes();
