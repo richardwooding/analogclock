@@ -1370,6 +1370,17 @@ function clearOverlay() {
      }
   }
 
+function clearAll() {
+  if (!displayClock) {
+     while (overlays.length > 0) {
+        var overlay = overlays[0];
+        overlay.setVisible(false);
+        overlay.dispose();
+        overlays.shift();
+     }
+  }
+}
+
 // The core function, which co-ordinates all the functions together.                       
 var _clock = function(){
   
@@ -1388,6 +1399,10 @@ var _clock = function(){
     overlay.setVisible(true);
     overlays.push(overlay);
     clearOverlay();
+  }
+
+  if (!displayClock) {
+     clearAll();
   }
 
 
