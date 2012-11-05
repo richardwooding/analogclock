@@ -1262,7 +1262,7 @@ var _minute_needle = new (function(ctx,rad,min,sec){
       this.canvas.textAlign="center";
       this.canvas.fillStyle = fgCol;
 
-      this.canvas.fillText(pad(_dateObject.hours,2) + ":" + pad(_dateObject.minutes, 2), this.center,this.textZY);
+      this.canvas.fillText(pad(_dateObject.hours,2) + ":" + pad(this.min, 2), this.center,this.textZY);
       this.canvas.fillText(offset, this.center,this.textTY); 
     
      this.next();
