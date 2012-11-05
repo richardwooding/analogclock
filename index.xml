@@ -1136,16 +1136,6 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.fillStyle = bgCol;
     this.canvas.fill();
     this.canvas.stroke();
-    
-    this.canvas.font = "normal 20px sans-serif";
-    this.canvas.textBaseline = 'middle';
-    this.canvas.textAlign="center";
-    this.canvas.fillStyle = fgCol;
-
-    var date = new Date();
-
-    this.canvas.fillText(pad(_dateObject.hours,2) + ":" + pad(_dateObject.minutes, 2), this.center,this.textZY);
-    this.canvas.fillText(offset, this.center,this.textTY); 
 
     this.drawDotes();
     this.drawHourDotes();
@@ -1266,6 +1256,14 @@ var _minute_needle = new (function(ctx,rad,min,sec){
      this.canvas.lineTo(this.center,this.center);
      this.canvas.closePath();
      this.canvas.stroke();
+
+      this.canvas.font = "normal 20px sans-serif";
+      this.canvas.textBaseline = 'middle';
+      this.canvas.textAlign="center";
+      this.canvas.fillStyle = fgCol;
+
+      this.canvas.fillText(pad(_dateObject.hours,2) + ":" + pad(_dateObject.minutes, 2), this.center,this.textZY);
+      this.canvas.fillText(offset, this.center,this.textTY); 
     
      this.next();
      
