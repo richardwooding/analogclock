@@ -47,7 +47,7 @@
        text-align: center;
     }
   </style>
-  <script src="https://hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.3" ></script>
+  <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.3" ></script>
 </head>
     <body>
       <div id="clockui" style="visibility: hidden;">
