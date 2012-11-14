@@ -1145,7 +1145,7 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.stroke();
 
     if (logoImage) {
-      this.canvas.drawImage(logoImage, center+logoPositions[0].x*this.radius-logoImage.width/2, center+logoPositions[0].y*rthis.adius-logoImage.height/2);
+      this.canvas.drawImage(logoImage, this.center+logoPositions[0].x*this.radius-logoImage.width/2, this.center+logoPositions[0].y*rthis.adius-logoImage.height/2);
     }
 
     this.drawDotes();
