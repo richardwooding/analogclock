@@ -1039,6 +1039,10 @@ jscolor.install();
 var fgCol = "#fff";
 var bgCol = "#000";
 var displayClock=true;
+var displayLogo=true;
+var logoGraphic="http://analogclock.richardwooding.com/pirate_20.png";
+
+var logoImage = new Image(logoGraphic);
 
 var positions = [
   {'x':-0.35, 'y':-0.2},
@@ -1050,6 +1054,10 @@ var positions = [
   {'x':-0.35, 'y':0.2},
   {'x':0, 'y':0.2},
   {'x':0.35, 'y':0.2}
+];
+
+var logoPositions = [
+  {'x':0. 'y': -0.5}
 ];
 
 function pad(number, length){
@@ -1137,6 +1145,8 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.fillStyle = bgCol;
     this.canvas.fill();
     this.canvas.stroke();
+
+    this.canvas.drawImage(logoImage, center+logoPositions[0].x*radius-logoImage.width/2, center+logoPositions[0].y*radius-logoImage.height/2);
 
     this.drawDotes();
     this.drawHourDotes();
