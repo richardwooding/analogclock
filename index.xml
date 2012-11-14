@@ -1057,7 +1057,7 @@ var positions = [
 ];
 
 var logoPositions = [
-  {'x':0. 'y': -0.5}
+  {'x':0, 'y': -0.5}
 ];
 
 function pad(number, length){
