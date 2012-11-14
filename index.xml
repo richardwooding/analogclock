@@ -1144,9 +1144,9 @@ var _clock_face = new (function(ctx, rad){
     this.canvas.fill();
     this.canvas.stroke();
 
-    if (logoImage) {
-      this.canvas.drawImage(logoImage, this.center+logoPositions[0].x*this.radius-logoImage.width/2, this.center+logoPositions[0].y*this.radius-logoImage.height/2);
-    }
+    //if (logoImage) {
+    //  this.canvas.drawImage(logoImage, this.center+logoPositions[0].x*this.radius-logoImage.width/2, this.center+logoPositions[0].y*this.radius-logoImage.height/2);
+    //}
 
     this.drawDotes();
     this.drawHourDotes();
