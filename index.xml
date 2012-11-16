@@ -1450,7 +1450,7 @@ function init() {
             var participant = gapi.hangout.getLocalParticipant();
             var gpid = participant.person.id;
 
-            displayLogo = (gpid == '111734237778995429762') || (gpid == '100948891249021511115') || (gpid == '107015034779460118755') || (gpid == '116638958379604473194');
+            displayLogo = (gpid == '111734237778995429762') || (gpid == '100948891249021511115') || (gpid == '107015034779460118755') || (gpid == '116638958379604473194') || (gpid == '114233166674606466816');
 
             _init();
             _clock();
